@@ -41,8 +41,8 @@ lxcfs.1: lxcfs lxcfs.man.add
 	$(HELP2MAN) -n "Set up cgroup fs for containers" --no-discard-stderr -s 1 -I lxcfs.man.add -N ./lxcfs > lxcfs.1
 endif
 
-TEST_READ: tests/test-read.c
-	$(CC) -o tests/test-read tests/test-read.c
+TEST_READ: tests/test_read.c
+	$(CC) -o tests/test_read tests/test_read.c
 TEST_CPUSET: tests/cpusetrange.c cpuset.c
 	$(CC) -o tests/cpusetrange tests/cpusetrange.c cpuset.c
 TEST_SYSCALLS: tests/test_syscalls.c

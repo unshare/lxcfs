@@ -63,9 +63,9 @@ RUNTEST() {
 }
 
 TESTCASE="test_proc"
-RUNTEST ${dirname}/test_proc
+RUNTEST ${dirname}/test_proc.sh
 TESTCASE="test_cgroup"
-RUNTEST ${dirname}/test_cgroup
+RUNTEST ${dirname}/test_cgroup.sh
 TESTCASE="test_read_proc.sh"
 RUNTEST ${dirname}/test_read_proc.sh
 TESTCASE="cpusetrange"
