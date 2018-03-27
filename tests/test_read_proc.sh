@@ -1,18 +1,17 @@
-#/bin/bash -eux
+#!/bin/bash -eux
 #./lxcfs -s -f -d -o allow_other -o direct_io ${DIR}
 
 red_c() {
      echo -e $2 "\e[31;1m${1}\e[0m"
 }
-DIR=${LXCFSDIR:-/var/lib/lxcfs}
+LXCFSDIR="{$LXCFSDIR:-/var/lib/lxcfs}"
 
-if ! mountpoint -q $DIR; then
-    echo "lxcfs isn't mounted on ${DIR}"
+if ! mountpoint -q ${LXCFSDIR}; then
+    echo "lxcfs isn't mounted on ${LXCFSDIR}"
     exit 1
 fi
 
 
-PWD=`pwd`
 COUNT=3
 
 for i in test_read
@@ -20,12 +19,12 @@ do
 	BIN=$PWD/$i
 
 	red_c "$BIN test cpuinfo"
-	$BIN $DIR/proc/cpuinfo $COUNT
+	$BIN ${LXCFSDIR}/proc/cpuinfo $COUNT
 
 	red_c "$BIN test stat"
-	$BIN $DIR/proc/stat $COUNT
+	$BIN ${LXCFSDIR}/proc/stat $COUNT
 
 	red_c "$BIN test meminfo"
-	$BIN $DIR/proc/meminfo $COUNT
+	$BIN ${LXCFSDIR}/proc/meminfo $COUNT
 done
 exit 0
