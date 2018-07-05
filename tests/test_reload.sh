@@ -11,8 +11,8 @@ topdir=$(dirname ${dirname})
 testdir=`mktemp -t -d libs.XXX`
 installdir=`mktemp -t -d libs.XXX`
 pidfile=$(mktemp)
-libdir=${installdir}/usr/lib
-bindir=${installdir}/usr/bin
+libdir=${installdir}/usr/local/lib
+bindir=${installdir}/usr/local/bin
 lxcfspid=-1
 FAILED=1
 

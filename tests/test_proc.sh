@@ -29,6 +29,9 @@ rmdir ${mempath}/lxcfs_test_proc || true
 mkdir ${cpupath}/lxcfs_test_proc
 mkdir ${mempath}/lxcfs_test_proc
 
+cat ${cpupath}/cpuset.mems >${cpupath}/lxcfs_test_proc/cpuset.mems
+cat ${cpupath}/cpuset.cpus >${cpupath}/lxcfs_test_proc/cpuset.cpus
+
 echo 1 > ${cpupath}/lxcfs_test_proc/tasks
 echo 1 > ${mempath}/lxcfs_test_proc/tasks
 

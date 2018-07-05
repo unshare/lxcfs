@@ -35,6 +35,9 @@ mkdir ${cpupath}/${UUID}
 mkdir ${mempath}/${UUID}
 mkdir ${frzpath}/${UUID}
 
+cat ${cpupath}/cpuset.mems >${cpupath}/${UUID}/cpuset.mems
+cat ${cpupath}/cpuset.cpus >${cpupath}/${UUID}/cpuset.cpus
+
 # Check that the fs is readable
 for p in ${mempath} ${frzpath} ${cpupath}; do
 	find ${p} > /dev/null
