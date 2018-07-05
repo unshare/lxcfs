@@ -12,10 +12,6 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
 	Makefile
 	lxcfs.spec
-	share/Makefile
-	share/00-lxcfs.conf
-	share/lxc.mount.hook
-	share/lxc.reboot.hook
 	tests/Makefile ])
 
 LT_INIT
@@ -37,19 +33,8 @@ AC_ARG_WITH([runtime-path],
 	)], [], [with_runtime_path=['/run']])
 
 AS_AC_EXPAND(RUNTIME_PATH, "$with_runtime_path")
-AS_AC_EXPAND(LXCFSSHAREDIR, "$datarootdir/lxcfs")
-AS_AC_EXPAND(LXCCONFDIR, "$datarootdir/lxc/config/common.conf.d")
-AS_AC_EXPAND(LXCFSTARGETDIR, "$localstatedir/lib/lxcfs")
 
 AC_SUBST([lxcfsdir], "${libdir}/lxcfs")
-
-# Rootfs path, where the container mount structure is assembled
-AC_ARG_WITH([rootfs-path],
-	[AC_HELP_STRING(
-		[--with-rootfs-path=dir],
-		[lxc rootfs mount point]
-	)], [], [with_rootfs_path=['${libdir}/lxc/rootfs']])
-
 AS_AC_EXPAND(LIBDIR, "$libdir")
 
 AC_OUTPUT

@@ -16,9 +16,6 @@
 !/m4/acinclude.m4
 /missing
 /stamp-h1
-/share/00-lxcfs.conf
-/share/lxc.mount.hook
-/share/lxc.reboot.hook
 /tests/test_cpusetrange
 /tests/test_read
 /tests/test_syscalls
