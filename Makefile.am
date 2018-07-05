@@ -82,3 +82,4 @@ distclean:
 		tests/test_cpusetrange \
 		tests/test_syscalls \
 		*.lo *.la
+# FIXME: do something about m4/acinclude.m4
