@@ -19,7 +19,7 @@
 /share/00-lxcfs.conf
 /share/lxc.mount.hook
 /share/lxc.reboot.hook
-/tests/cpusetrange
+/tests/test_cpusetrange
 /tests/test_read
 /tests/test_syscalls
 

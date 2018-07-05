@@ -15,7 +15,7 @@ fi
 PWD=`pwd`
 COUNT=3
 
-for i in test-read
+for i in test_read
 do
 	BIN=$PWD/$i
 
