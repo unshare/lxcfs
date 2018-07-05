@@ -42,4 +42,3 @@ bool cpu_in_cpuset(int cpu, const char *cpuset)
 
 	return false;
 }
-

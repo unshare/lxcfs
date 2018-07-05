@@ -12,15 +12,14 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
 	Makefile
 	lxcfs.spec
-	tests/Makefile ])
+	tests/Makefile
+])
 
 LT_INIT
 AC_PROG_CC
-
 AC_PROG_CC_C99
 
 AC_CHECK_LIB(pthread, main)
-
 PKG_CHECK_MODULES(FUSE, fuse)
 
 AC_PATH_PROG(HELP2MAN, help2man, false // No help2man //)
@@ -31,7 +30,6 @@ AC_ARG_WITH([runtime-path],
 		[--with-runtime-path=dir],
 		[runtime directory (default: /run)]
 	)], [], [with_runtime_path=['/run']])
-
 AS_AC_EXPAND(RUNTIME_PATH, "$with_runtime_path")
 
 AC_SUBST([lxcfsdir], "${libdir}/lxcfs")
